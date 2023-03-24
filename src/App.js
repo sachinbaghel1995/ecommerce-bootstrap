@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Products from "./components/Designing/Products";
+import {  Container, Navbar,Button } from "react-bootstrap";
+// import Counter from "./components/Counter";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar bg="dark" variant="dark" expand="sm">
+      <Container>
+        <Navbar.Brand href='/'>E-commerce</Navbar.Brand>
+        <Button variant="link">Home</Button>
+        <Button variant="link" className="ms-1">Store</Button>
+        <Button variant="link">About</Button>
+        <Button>Cart</Button>
+      </Container>
+    </Navbar>
+    {/* <Counter/> */}
+    <Products/>
+    </>
   );
 }
 
