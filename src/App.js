@@ -1,11 +1,12 @@
 import React from "react";
+import CartProvider from "./store/CartProvider";
 import Products from "./components/Designing/Products";
 import {  Container, Navbar,Button } from "react-bootstrap";
-// import ModalCart from "./components/Cart/ModalCart";
-// import Counter from "./components/Counter";
+
 import Cart from "./components/Cart/Cart";
 import HeaderCartButton from "./components/Cart/HeaderCartButton";
 import { useState } from "react";
+
 
 function App() {
   const [showCart,setShowCart]=useState(false)
@@ -17,9 +18,8 @@ function App() {
   setShowCart(false)
   }
   return (
-    <>
-    
-    <Navbar bg="dark" variant="dark" expand="sm">
+  <CartProvider>
+  <Navbar bg="dark" variant="dark" expand="sm">
       <Container>
         <Navbar.Brand href='/'>E-commerce</Navbar.Brand>
         <Button variant="link">Home</Button>
@@ -31,7 +31,7 @@ function App() {
    {showCart && <Cart onClose={hideCartHandler}/>}
     {/* <Counter/> */}
     <Products/>
-    </>
+    </CartProvider>
   );
 }
 
